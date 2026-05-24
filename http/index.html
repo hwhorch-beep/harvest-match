@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Paste this week's farmers market produce list, get curated recipes from a hand-picked set of cooks. For the Brunswick, Maine market." />
+    <title>Harvest Match</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <h1>Harvest Match</h1>
+      <p class="tagline">
+        Paste this week's produce list. Get a few recipes worth making, from cooks worth trusting.
+      </p>
+      <p class="setup-link">
+        First time? <a href="how-to-use.html">How to set this up</a> (about 10 minutes).
+      </p>
+    </header>
+
+    <main>
+      <form id="harvest-form" autocomplete="off">
+        <div class="field">
+          <label for="api-key">Anthropic API key</label>
+          <input
+            id="api-key"
+            type="password"
+            inputmode="text"
+            autocapitalize="off"
+            autocorrect="off"
+            spellcheck="false"
+            placeholder="sk-ant-..."
+            required
+          />
+          <label class="checkbox-row">
+            <input type="checkbox" id="remember-key" />
+            <span>Remember on this device</span>
+          </label>
+          <p class="hint">
+            Your key is stored only in this browser and is sent only to
+            <code>api.anthropic.com</code>. It is never logged or transmitted anywhere else.
+          </p>
+        </div>
+
+        <div class="field">
+          <label for="produce-list">This week's produce list</label>
+          <textarea
+            id="produce-list"
+            rows="8"
+            placeholder="e.g. kale raab, sprouting broccoli, Hakurei salad turnips, asparagus, overwintered leeks, bok choi, baby spinach, mint, chives"
+            required
+          ></textarea>
+          <p class="hint">
+            Paste from the Six River newsletter, or type a comma- or line-separated list.
+          </p>
+        </div>
+
+        <button type="submit" id="submit-button" disabled>Find recipes</button>
+      </form>
+
+      <section id="output-section" hidden aria-live="polite">
+        <div id="status-line"></div>
+        <article id="output" class="markdown-body"></article>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>
+        Built for the Brunswick, Maine farmers market. Source on
+        <a href="https://github.com/HadleyHorch/harvest-match">GitHub</a>.
+      </p>
+    </footer>
+
+    <script type="module" src="app.js"></script>
+  </body>
+</html>

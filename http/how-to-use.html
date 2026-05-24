@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>How to use Harvest Match</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <h1>How to use Harvest Match</h1>
+      <p class="tagline">A ten-minute, one-time setup. Then it's just paste and go.</p>
+      <p class="setup-link"><a href="index.html">← Back to the app</a></p>
+    </header>
+
+    <main>
+      <article class="markdown-body">
+        <h2>What you'll need</h2>
+        <p>
+          Harvest Match runs entirely in your browser. There's no account on our side — no
+          sign-up, no password. Instead, you'll create your own Anthropic account and paste
+          your own API key into the app. Your key stays on this device.
+        </p>
+
+        <h2>1. Make an Anthropic account</h2>
+        <p>
+          Go to <a href="https://console.anthropic.com" target="_blank" rel="noopener noreferrer">console.anthropic.com</a>
+          and sign up. It's free to create the account; you'll add a few dollars of credit in
+          the next step.
+        </p>
+
+        <h2>2. Add a little credit</h2>
+        <p>
+          Once you're signed in, open <strong>Plans &amp; Billing</strong> in the sidebar and
+          add <strong>$5</strong>. This will last you many, many weeks of farmers-market
+          queries — each query costs about <strong>1–3 cents</strong>. (Most of the cost is
+          the model doing 3–5 web searches to find the actual recipe links.)
+        </p>
+
+        <h2>3. Generate an API key</h2>
+        <p>
+          In the Anthropic console, go to <strong>API Keys</strong> in the sidebar and click
+          <strong>Create Key</strong>. Give it any name you like (e.g.
+          <em>"harvest match on my phone"</em>). Copy the key it shows you — it starts with
+          <code>sk-ant-</code> and you'll only see it once.
+        </p>
+
+        <h2>4. Paste it into Harvest Match</h2>
+        <p>
+          Back on <a href="index.html">the main page</a>, paste the key into the
+          "Anthropic API key" field. Check <strong>Remember on this device</strong> if you
+          want it to stick around between visits.
+        </p>
+
+        <h2>5. Paste this week's produce list</h2>
+        <p>
+          Copy the list from Six River Farm's email (or any farm's email, or just type a
+          list yourself). Hit <strong>Find recipes</strong>. The first run takes 20–40
+          seconds while the model searches the curated cooking sites for real recipe links.
+        </p>
+
+        <h2>Where your key lives</h2>
+        <p>
+          Your API key is stored only in this browser's <code>localStorage</code>, on this
+          device. It is sent only to <code>api.anthropic.com</code> — never logged on our
+          side, never included in error messages, never sent to any other server. If you
+          clear your browser data, the key goes away. If you want to revoke it, do so from
+          the Anthropic console at any time.
+        </p>
+
+        <h2>What it costs</h2>
+        <p>
+          Each query runs Claude Sonnet 4.6 with up to 5 web searches. Typical cost is in
+          the <strong>1–3 cent</strong> range. A $5 top-up will last hundreds of queries.
+          Your usage and remaining balance live in the Anthropic console under
+          <strong>Usage</strong>.
+        </p>
+
+        <h2>If something breaks</h2>
+        <ul>
+          <li><strong>"Your API key was rejected"</strong> — re-paste it. The key must start with <code>sk-ant-</code>.</li>
+          <li><strong>"Rate-limited"</strong> — wait a minute and try again. New Anthropic accounts have low initial limits that lift quickly.</li>
+          <li><strong>"Network error"</strong> — check your connection. The app needs to reach <code>api.anthropic.com</code>.</li>
+          <li><strong>Output looks thin</strong> — try a more specific list, or include more fleeting items. The model works best when there's a clear "what's the star of the week" question to answer.</li>
+        </ul>
+      </article>
+    </main>
+
+    <footer class="site-footer">
+      <p>
+        Built for the Brunswick, Maine farmers market.
+        <a href="https://github.com/HadleyHorch/harvest-match">Source on GitHub</a>.
+      </p>
+    </footer>
+  </body>
+</html>
