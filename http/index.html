@@ -43,6 +43,45 @@
         </div>
 
         <div class="field">
+          <details id="sources-details" class="sources">
+            <summary>
+              <span class="summary-label">Recipe sources</span>
+              <span id="sources-count" class="count"></span>
+            </summary>
+            <p class="hint">
+              The cooks Harvest Match searches when building your week's recipes. Uncheck any you'd rather skip; add your own below. Each active source adds a web search or two per request, so more sources means a slightly higher cost (still pennies — but trim if you want it faster and cheaper).
+            </p>
+            <ul id="default-sources" class="source-list"></ul>
+            <div id="custom-sources-block" hidden>
+              <p class="sources-subhead">Your additions</p>
+              <ul id="custom-sources" class="source-list"></ul>
+            </div>
+            <div class="add-source">
+              <input
+                id="source-name"
+                type="text"
+                placeholder="Name (e.g. Food52)"
+                autocomplete="off"
+                autocapitalize="words"
+                spellcheck="false"
+              />
+              <input
+                id="source-url"
+                type="text"
+                placeholder="URL (e.g. food52.com)"
+                autocomplete="off"
+                autocapitalize="off"
+                spellcheck="false"
+              />
+              <button type="button" id="add-source-button" disabled>Add</button>
+            </div>
+            <p id="sources-warning" class="hint warning" hidden>
+              You've turned off every source. Re-enable at least one before searching.
+            </p>
+          </details>
+        </div>
+
+        <div class="field">
           <label for="produce-list">This week's produce list</label>
           <textarea
             id="produce-list"
